@@ -1,25 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Menu from "./Componentes/Menu/menu";
+import PaginaBuscador from "./Componentes/PaginaBuscador/PaginaBuscador";
+import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
+import PaginaDetalles from "./Componentes/PaginaDetalles/PaginaDetalles";
+import { TodosBikonianosProvider } from "./Contextos/TodosBikonianosContext";
+import NotPageFound from "./Componentes/NotPageFound";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Menu></Menu>
+        <header className="App-header">
+          <Switch>
+            <TodosBikonianosProvider>
+              <Route exact path="/" component={PaginaBuscador}></Route>
+              <Route exact path="/bikoniano" component={PaginaDetalles}></Route>
+              <Route path="/404" component={NotPageFound}></Route>
+              <Redirect to="/404"></Redirect>
+            </TodosBikonianosProvider>
+          </Switch>
+        </header>
+      </div>
+    </BrowserRouter>
   );
 }
 
