@@ -1,3 +1,4 @@
+import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 import { FiltroContext } from "../../Contextos/FiltroBusquedaContext";
 import { TodosBikonianosContext } from "../../Contextos/TodosBikonianosContext";
@@ -29,7 +30,7 @@ function GridBikonianos() {
         bikoniano.Nombre.toLowerCase().includes(textoBusqueda.toLowerCase())
       )
     );
-  }, [textoBusqueda]);
+  }, [textoBusqueda, todosBikonianos]);
 
   if (!bikonianosFiltrados) {
     return <div>Loading....</div>;
@@ -50,4 +51,5 @@ function GridBikonianos() {
     </div>
   );
 }
+
 export default GridBikonianos;

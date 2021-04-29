@@ -4,7 +4,9 @@ function Cabecera() {
     <div className="container">
       <div className="row">
         <div className="col-7">
-          <h1 id="titulo">Busca Bikonianos</h1>
+          <h1 id="titulo">
+            <b>Busca Bikonianos</b>
+          </h1>
           <p style={{ color: colors.rojoPrincipal }}>
             (Mini titulo de todosBikonianos)
           </p>

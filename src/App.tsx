@@ -12,14 +12,20 @@ function App() {
       <div className="App">
         <Menu></Menu>
         <header className="App-header">
-          <Switch>
-            <TodosBikonianosProvider>
+          <TodosBikonianosProvider>
+            <Switch>
               <Route exact path="/" component={PaginaBuscador}></Route>
-              <Route exact path="/bikoniano" component={PaginaDetalles}></Route>
-              <Route path="/404" component={NotPageFound}></Route>
-              <Redirect to="/404"></Redirect>
-            </TodosBikonianosProvider>
-          </Switch>
+              <Switch>
+                <Route
+                  exact
+                  path="/bikoniano"
+                  component={PaginaDetalles}
+                ></Route>
+                <Route path="/404" component={NotPageFound}></Route>
+                <Redirect to="/404"></Redirect>
+              </Switch>
+            </Switch>
+          </TodosBikonianosProvider>
         </header>
       </div>
     </BrowserRouter>

@@ -6,7 +6,7 @@ function Flecha() {
           <div id="arrow-line"></div>
         </div>
       </div>
-      <div className="row mt-5 ml-4">
+      <div className="row mt-5 pl-5">
         <div className="col pl-0">
           <div className="arrow down"></div>
         </div>

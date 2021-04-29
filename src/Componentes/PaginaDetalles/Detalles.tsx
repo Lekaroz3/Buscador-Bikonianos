@@ -17,14 +17,16 @@ function DetallesBikoniano() {
       </Link> */}
 
       <div className="row">
-        <div className="col-lg-6 col-md-6 col-12 mb-5">
+        <div className="col-lg-5 col-md-5 col-12 mb-5 pl-0">
           <img
-            src="https://los40es00.epimg.net/los40/imagenes/2020/08/10/cinetv/1597052600_721073_1597052703_noticia_normal.jpg"
+            src="https://s3-alpha-sig.figma.com/img/9eb2/3b96/f3c81e519af3902aa192789993d1b3b1?Expires=1620604800&Signature=CdcOnFDp0YZWqN4wnI9rj4~gRjpbNcBH~OPt-J9Wa0Mo0rHzEXX3N98h-L5zzp0WlkwB-pZKlA0hffgxvc9OCrbrrjr-Ga-CLNawuag3NSqS6jONqEQ357zI9plMQKKSN1FKHXOWeUL50nVhlhtiw0R3MUtOfECn8fKQ-nBI9obhWh1tZI73t9warpyV-AjposDGXQf0~PykII9RHeTO4rzos7iWsQOepZDo-pAobI2itVUlev~Ivn2hrGb85WlRx-e05vjGhQ-ChZCv6SPNQfGiCqPWeSYv1PG83XptpQtS8E1M9w5CZqfweUzdN5UbYc3ox8Y208g~6vtIQ9XL~A__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA"
             className="img-fluid"
             alt={bikoniano.Nombre}
+            width="729.57px"
+            height="711.28px"
           />
         </div>
-        <div className="col-lg-6 col-md-6 col-12 mb-4">
+        <div className="col-lg-6 col-md-6 col-12 mb-4  pl-5 ">
           <h1 className="mt-4">{bikoniano.Nombre}</h1>
           <h1>
             <b>{bikoniano.Apellidos}</b>
