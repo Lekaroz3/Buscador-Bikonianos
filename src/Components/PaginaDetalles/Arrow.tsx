@@ -1,4 +1,4 @@
-function Flecha() {
+function Arrow() {
   return (
     <div className="container py-5 my-5 pl-0">
       <div className="row ">
@@ -15,4 +15,4 @@ function Flecha() {
   );
 }
 
-export default Flecha;
+export default Arrow;

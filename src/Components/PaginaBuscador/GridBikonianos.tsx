@@ -3,8 +3,8 @@ import { useContext, useEffect, useState } from "react";
 import { FiltroContext } from "../../Contextos/FiltroBusquedaContext";
 import { TodosBikonianosContext } from "../../Contextos/TodosBikonianosContext";
 import { Bikoniano } from "../../Interfaces/Interfaces";
-import { ObtenerBikonianos } from "../../Seervices/services";
-import ElementoGrid from "../ElemtoGrid";
+import { GetAllBikonianos } from "../../Services/services";
+import GridElement from "../GridElement";
 
 function GridBikonianos() {
   const { textoBusqueda } = useContext(FiltroContext);
@@ -16,7 +16,7 @@ function GridBikonianos() {
   );
 
   useEffect(() => {
-    const data = ObtenerBikonianos();
+    const data = GetAllBikonianos();
     data
       .then((result) => {
         setTodosBikonianos(result);
@@ -44,7 +44,7 @@ function GridBikonianos() {
       <div className="row">
         {bikonianosFiltrados.map((bikoniano, index) => {
           return (
-            <ElementoGrid bikoniano={bikoniano} index={index}></ElementoGrid>
+            <GridElement bikoniano={bikoniano} index={index}></GridElement>
           );
         })}
       </div>

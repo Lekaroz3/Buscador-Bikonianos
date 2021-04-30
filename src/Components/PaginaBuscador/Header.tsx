@@ -1,12 +1,10 @@
 import * as colors from "../../Styles/colors";
-function Cabecera() {
+function Header() {
   return (
     <div className="container">
       <div className="row">
         <div className="col-7">
-          <h1 id="titulo">
-            <b>Busca Bikonianos</b>
-          </h1>
+          <h1 id="titulo">Busca Bikonianos</h1>
           <p style={{ color: colors.rojoPrincipal }}>
             (Mini titulo de todosBikonianos)
           </p>
@@ -21,4 +19,4 @@ function Cabecera() {
   );
 }
 
-export default Cabecera;
+export default Header;

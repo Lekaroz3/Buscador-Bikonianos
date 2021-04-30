@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { TodosBikonianosContext } from "../Contextos/TodosBikonianosContext";
 
-function ElementoGrid(props: any) {
+function GridElement(props: any) {
   const { setPosicionBikoniano } = useContext(TodosBikonianosContext);
 
   return (
@@ -38,4 +38,4 @@ function ElementoGrid(props: any) {
   );
 }
 
-export default ElementoGrid;
+export default GridElement;

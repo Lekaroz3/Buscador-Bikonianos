@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { TodosBikonianosContext } from "../../Contextos/TodosBikonianosContext";
 import { Bikoniano } from "../../Interfaces/Interfaces";
-import ElementoGrid from "../ElemtoGrid";
+import GridElement from "../GridElement";
 
-function MiembrosReact(props: any) {
+function MemberOf(props: any) {
   const { todosBikonianos, posicionBikoniano } = useContext(
     TodosBikonianosContext
   );
@@ -45,10 +45,10 @@ function MiembrosReact(props: any) {
           if (bikon === bikoniano) return;
           if (index >= 4) return;
           const ind = todosBikonianos.indexOf(bikon);
-          return <ElementoGrid bikoniano={bikon} index={ind}></ElementoGrid>;
+          return <GridElement bikoniano={bikon} index={ind}></GridElement>;
         })}
       </div>
     </div>
   );
 }
-export default MiembrosReact;
+export default MemberOf;

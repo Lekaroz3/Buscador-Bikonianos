@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { TodosBikonianosContext } from "../../Contextos/TodosBikonianosContext";
 import * as colors from "../../Styles/colors";
 
-function DetallesBikoniano() {
+function BikonianoDetails() {
   const { todosBikonianos, posicionBikoniano } = useContext(
     TodosBikonianosContext
   );
@@ -71,4 +71,4 @@ function DetallesBikoniano() {
     </div>
   );
 }
-export default DetallesBikoniano;
+export default BikonianoDetails;

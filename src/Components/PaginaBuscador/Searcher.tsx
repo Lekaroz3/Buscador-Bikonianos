@@ -2,7 +2,7 @@ import { useContext, useRef } from "react";
 import { FiltroContext } from "../../Contextos/FiltroBusquedaContext";
 import * as colors from "../../Styles/colors";
 
-function Buscador() {
+function Searcher(props: any) {
   const { setTextoBusqueda } = useContext(FiltroContext);
   const textoFiltro = useRef(null);
 
@@ -15,6 +15,7 @@ function Buscador() {
 
           const inputFiltro: any = textoFiltro.current;
           if (inputFiltro) {
+            //props.setText(inputFiltro.value);
             setTextoBusqueda(inputFiltro.value);
           }
         }}
@@ -26,11 +27,14 @@ function Buscador() {
             className="form-control form-control-lg pr-0"
             aria-label="Amount (to the nearest dollar)"
             placeholder="Nombre Bikoniano"
+            style={{
+              borderRadius: "1px",
+            }}
           />
         </div>
         <div className="input-group-append">
           <button
-            className="btn"
+            className="btn px-3"
             type="submit"
             style={{
               backgroundColor: colors.rojoPrincipal,
@@ -56,4 +60,4 @@ function Buscador() {
   );
 }
 
-export default Buscador;
+export default Searcher;

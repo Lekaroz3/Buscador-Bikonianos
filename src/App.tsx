@@ -1,10 +1,10 @@
 import "./App.css";
-import Menu from "./Componentes/Menu/menu";
-import PaginaBuscador from "./Componentes/PaginaBuscador/PaginaBuscador";
+import Menu from "./Components/Menu/menu";
+import SearcherPage from "./Components/PaginaBuscador/SearcherPage";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
-import PaginaDetalles from "./Componentes/PaginaDetalles/PaginaDetalles";
+import DetailsPage from "./Components/PaginaDetalles/DetailsPage";
 import { TodosBikonianosProvider } from "./Contextos/TodosBikonianosContext";
-import NotPageFound from "./Componentes/NotPageFound";
+import NotPageFound from "./Components/NotPageFound";
 
 function App() {
   return (
@@ -14,13 +14,9 @@ function App() {
         <header className="App-header">
           <TodosBikonianosProvider>
             <Switch>
-              <Route exact path="/" component={PaginaBuscador}></Route>
+              <Route exact path="/" component={SearcherPage}></Route>
               <Switch>
-                <Route
-                  exact
-                  path="/bikoniano"
-                  component={PaginaDetalles}
-                ></Route>
+                <Route exact path="/bikoniano" component={DetailsPage}></Route>
                 <Route path="/404" component={NotPageFound}></Route>
                 <Redirect to="/404"></Redirect>
               </Switch>

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export async function ObtenerBikonianos() {
+export async function GetAllBikonianos() {
   try {
     const response = await axios.get("data.json");
     return response.data;
