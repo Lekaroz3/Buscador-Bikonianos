@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Bikoniano } from "../../Interfaces/Interfaces";
 import GridElement from "../GridElement";
 
@@ -40,7 +40,7 @@ function MemberOf(props: {
   }
 
   return (
-    <div className="container">
+    <div className="container mt-5">
       <h3 className="mb-5">
         <b>{title}</b>
       </h3>

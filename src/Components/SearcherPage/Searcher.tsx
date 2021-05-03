@@ -1,43 +1,32 @@
 import { useRef } from "react";
-import * as colors from "../../Styles/colors";
 
 function Searcher(props: any) {
   const textFilterInput = useRef(null);
 
+  function onSubmitHandle(event: any) {
+    event.preventDefault();
+
+    const inputFiltro: any = textFilterInput.current;
+    if (inputFiltro) {
+      props.setText(inputFiltro.value);
+    }
+  }
+
   return (
     <div className="mb-5 mt-4">
-      <form
-        className="row g-3"
-        onSubmit={(event) => {
-          event.preventDefault();
-
-          const inputFiltro: any = textFilterInput.current;
-          if (inputFiltro) {
-            props.setText(inputFiltro.value);
-          }
-        }}
-      >
-        <div className="col-7 pr-0">
+      <form className="row g-3" onSubmit={onSubmitHandle}>
+        <div className="col-7 mr-4">
           <input
             ref={textFilterInput}
             type="text"
+            id="inputFiltro"
             className="form-control form-control-lg pr-0"
             aria-label="Amount (to the nearest dollar)"
             placeholder="Nombre Bikoniano"
-            style={{
-              borderRadius: "1px",
-            }}
           />
         </div>
         <div className="input-group-append">
-          <button
-            className="btn px-3"
-            type="submit"
-            style={{
-              backgroundColor: colors.redPrimary,
-              borderRadius: "1px",
-            }}
-          >
+          <button id="btnBuscarFiltro" className="btn" type="submit">
             <span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

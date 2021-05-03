@@ -6,7 +6,7 @@ function BikonianoDetails(props: any) {
     ? bikoniano["Fecha incorporación a Biko"].toString().split("/")[2]
     : "No Year";
   return (
-    <div className="container-fluid">
+    <div className="container-fluid ">
       <div className="row">
         <div className="col-lg-5 col-md-5 col-12 mb-5 pl-0">
           <img

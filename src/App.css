@@ -14,12 +14,20 @@ p {
 .App-link {
   color: #61dafb;
 }
+.menu {
+  padding-top: 32px;
+  padding-bottom: 16.7px;
+  margin-left: 146px;
+  margin-right: 146px;
+}
 
 #logo {
   width: 120px;
   height: 43.3px;
-  left: 144px;
-  top: 32px;
+}
+#divCentrado {
+  margin-left: 146px;
+  margin-right: 146px;
 }
 
 #titulo {
@@ -28,6 +36,23 @@ p {
   font-weight: bold;
   font-size: 65.76px;
   line-height: 80px;
+}
+#pHeader {
+  font-weight: 300px;
+  size: 22.78px;
+  line-height: 32px;
+}
+#inputFiltro {
+  height: 60px;
+  width: 706px;
+  border-radius: 1px;
+}
+#btnBuscarFiltro {
+  height: 60px;
+  width: 60px;
+  background-color: #e73f39;
+  border-radius: 1px;
+  margin-left: 15px;
 }
 
 .contenedor {

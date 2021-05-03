@@ -3,12 +3,10 @@ import logo from "../../Images/logo.png";
 
 function Menu() {
   return (
-    <nav className="navbar my-4">
-      <div className="container">
-        <Link className="navbar-brand" to="/">
-          <img src={logo} alt="Logo" id="logo" />
-        </Link>
-      </div>
+    <nav className="menu">
+      <Link className="navbar-brand" to="/">
+        <img src={logo} alt="Logo" id="logo" />
+      </Link>
     </nav>
   );
 }
