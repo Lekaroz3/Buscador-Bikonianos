@@ -1,8 +1,8 @@
 import "./App.css";
 import Menu from "./Components/Menu/menu";
-import SearcherPage from "./Components/PaginaBuscador/SearcherPage";
+import SearcherPage from "./Components/SearcherPage/SearcherPage";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
-import DetailsPage from "./Components/PaginaDetalles/DetailsPage";
+import DetailsPage from "./Components/DetailsPage/DetailsPage";
 import NotPageFound from "./Components/NotPageFound";
 
 function App() {
