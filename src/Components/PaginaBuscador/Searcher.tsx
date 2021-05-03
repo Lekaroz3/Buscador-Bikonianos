@@ -1,10 +1,8 @@
-import { useContext, useRef } from "react";
-import { FiltroContext } from "../../Contextos/FiltroBusquedaContext";
+import { useRef } from "react";
 import * as colors from "../../Styles/colors";
 
 function Searcher(props: any) {
-  const { setTextoBusqueda } = useContext(FiltroContext);
-  const textoFiltro = useRef(null);
+  const textFilterInput = useRef(null);
 
   return (
     <div className="mb-5 mt-4">
@@ -13,16 +11,15 @@ function Searcher(props: any) {
         onSubmit={(event) => {
           event.preventDefault();
 
-          const inputFiltro: any = textoFiltro.current;
+          const inputFiltro: any = textFilterInput.current;
           if (inputFiltro) {
-            //props.setText(inputFiltro.value);
-            setTextoBusqueda(inputFiltro.value);
+            props.setText(inputFiltro.value);
           }
         }}
       >
         <div className="col-7 pr-0">
           <input
-            ref={textoFiltro}
+            ref={textFilterInput}
             type="text"
             className="form-control form-control-lg pr-0"
             aria-label="Amount (to the nearest dollar)"
@@ -37,7 +34,7 @@ function Searcher(props: any) {
             className="btn px-3"
             type="submit"
             style={{
-              backgroundColor: colors.rojoPrincipal,
+              backgroundColor: colors.redPrimary,
               borderRadius: "1px",
             }}
           >

@@ -1,50 +1,54 @@
-import axios from "axios";
+import data from "../../Data/data.json";
 import { useContext, useEffect, useState } from "react";
-import { FiltroContext } from "../../Contextos/FiltroBusquedaContext";
-import { TodosBikonianosContext } from "../../Contextos/TodosBikonianosContext";
 import { Bikoniano } from "../../Interfaces/Interfaces";
-import { GetAllBikonianos } from "../../Services/services";
 import GridElement from "../GridElement";
 
-function GridBikonianos() {
-  const { textoBusqueda } = useContext(FiltroContext);
-  const { todosBikonianos, setTodosBikonianos } = useContext(
-    TodosBikonianosContext
-  );
-  const [bikonianosFiltrados, setBikonianosFiltrados] = useState<Bikoniano[]>(
-    []
-  );
+function GridBikonianos(props: { textFilter: string }) {
+  const [allBikonianos, setAllBikonianos] = useState<Bikoniano[]>([]);
+  const [bikonianosFilters, setBikonianosFilters] = useState<Bikoniano[]>([]);
 
   useEffect(() => {
-    const data = GetAllBikonianos();
-    data
-      .then((result) => {
-        setTodosBikonianos(result);
+    setAllBikonianos(
+      data.map((bikoniano) => {
+        const bikonianoTemp: Bikoniano = {
+          Nombre: bikoniano.Nombre,
+          Apellidos: bikoniano.Apellidos,
+          Equipo: bikoniano.Equipo,
+          Rol: typeof bikoniano.Rol === "undefined" ? "" : bikoniano.Rol,
+          "Fecha incorporación a Biko":
+            typeof bikoniano["Fecha incorporación a Biko"] === "undefined"
+              ? ""
+              : bikoniano["Fecha incorporación a Biko"],
+        };
+        return bikonianoTemp;
       })
-      .catch((error) => console.log(error));
+    );
   }, []);
 
   useEffect(() => {
-    setBikonianosFiltrados(
-      todosBikonianos.filter((bikoniano) =>
-        bikoniano.Nombre.toLowerCase().includes(textoBusqueda.toLowerCase())
+    setBikonianosFilters(
+      allBikonianos.filter((bikoniano: Bikoniano) =>
+        bikoniano.Nombre.toLowerCase().includes(props.textFilter.toLowerCase())
       )
     );
-  }, [textoBusqueda, todosBikonianos]);
+  }, [props.textFilter, allBikonianos]);
 
-  if (!bikonianosFiltrados) {
+  if (!bikonianosFilters) {
     return <div>Loading....</div>;
   }
-  if (bikonianosFiltrados.length === 0) {
+  if (bikonianosFilters.length === 0) {
     return <div>No se han encontrado Bikonianos...</div>;
   }
 
   return (
     <div className="container p-0">
       <div className="row">
-        {bikonianosFiltrados.map((bikoniano, index) => {
+        {bikonianosFilters.map((bikoniano) => {
           return (
-            <GridElement bikoniano={bikoniano} index={index}></GridElement>
+            <GridElement
+              bikoniano={bikoniano}
+              allBikonianos={allBikonianos}
+            ></GridElement>
           );
         })}
       </div>

@@ -1,15 +1,25 @@
-import BikonianoDetails from "./Details";
+import BikonianoDetails from "./BikonianoDetails";
 import Arrow from "./Arrow";
 import MemberOf from "./MemberOf";
 
-function DetailsPage() {
+function DetailsPage(props: any) {
   return (
     <div>
-      <BikonianoDetails></BikonianoDetails>
+      <BikonianoDetails
+        bikoniano={props.location.state.bikoniano}
+      ></BikonianoDetails>
       <div className="container">
-        <MemberOf tipoABuscar={"equipo"}></MemberOf>
+        <MemberOf
+          typeToFind={"equipo"}
+          bikoniano={props.location.state.bikoniano}
+          allBikonianos={props.location.state.allBikonianos}
+        ></MemberOf>
         <Arrow></Arrow>
-        <MemberOf tipoABuscar={"rol"}></MemberOf>
+        <MemberOf
+          typeToFind={"rol"}
+          bikoniano={props.location.state.bikoniano}
+          allBikonianos={props.location.state.allBikonianos}
+        ></MemberOf>
       </div>
     </div>
   );

@@ -3,5 +3,5 @@ export interface Bikoniano {
   Apellidos: string;
   Equipo: string;
   Rol: string;
-  "Fecha incorporación a Biko": Date;
+  "Fecha incorporación a Biko": string;
 }

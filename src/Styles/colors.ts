@@ -1,2 +1,2 @@
-export const rojoPrincipal = "#E73F39";
-export const amarillo = "#FEDD27";
+export const redPrimary = "#E73F39";
+export const yellowPrimary = "#FEDD27";

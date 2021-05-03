@@ -1,35 +1,39 @@
 import { useContext, useEffect, useState } from "react";
-import { TodosBikonianosContext } from "../../Contextos/TodosBikonianosContext";
 import { Bikoniano } from "../../Interfaces/Interfaces";
 import GridElement from "../GridElement";
 
-function MemberOf(props: any) {
-  const { todosBikonianos, posicionBikoniano } = useContext(
-    TodosBikonianosContext
-  );
-  const bikoniano: Bikoniano = todosBikonianos[posicionBikoniano];
+function MemberOf(props: {
+  typeToFind: string;
+  bikoniano: Bikoniano;
+  allBikonianos: Bikoniano[];
+}) {
+  const bikoniano: Bikoniano = props.bikoniano;
   const [miembros, setMiembros] = useState<Bikoniano[]>([]);
-  const [titulo, setTitulo] = useState("");
+  const [title, setTitle] = useState("");
 
   useEffect(() => {
-    if (props.tipoABuscar === "equipo") {
+    if (props.typeToFind === "equipo") {
       setMiembros(
-        todosBikonianos.filter((bikon) => bikon.Equipo === bikoniano.Equipo)
+        props.allBikonianos.filter(
+          (bikon: Bikoniano) => bikon.Equipo === bikoniano.Equipo
+        )
       );
-      setTitulo("Miembros de " + bikoniano.Equipo);
+      setTitle("Miembros de " + bikoniano.Equipo);
     } else {
       //TODO filtrado de habilidad cundo suban con mas datos el excel
       setMiembros(
-        todosBikonianos.filter((bikon) => bikon.Rol === bikoniano.Rol)
+        props.allBikonianos.filter(
+          (bikon: Bikoniano) => bikon.Rol === bikoniano.Rol
+        )
       );
-      setTitulo("Otros de " + bikoniano.Rol);
+      setTitle("Otros de " + bikoniano.Rol);
     }
   }, [bikoniano]);
 
   if (!miembros) {
     return (
       <div className="container">
-        <h1>{titulo}</h1>
+        <h1>{title}</h1>
         <div className="row">Loading...</div>
       </div>
     );
@@ -38,14 +42,19 @@ function MemberOf(props: any) {
   return (
     <div className="container">
       <h3 className="mb-5">
-        <b>{titulo}</b>
+        <b>{title}</b>
       </h3>
       <div className="row">
         {miembros.map((bikon, index) => {
           if (bikon === bikoniano) return;
           if (index >= 4) return;
-          const ind = todosBikonianos.indexOf(bikon);
-          return <GridElement bikoniano={bikon} index={ind}></GridElement>;
+          const ind = props.allBikonianos.indexOf(bikon);
+          return (
+            <GridElement
+              bikoniano={bikon}
+              allBikonianos={props.allBikonianos}
+            ></GridElement>
+          );
         })}
       </div>
     </div>

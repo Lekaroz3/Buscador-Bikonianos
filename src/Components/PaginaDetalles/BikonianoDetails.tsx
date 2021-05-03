@@ -1,21 +1,12 @@
-import { useContext } from "react";
-import { TodosBikonianosContext } from "../../Contextos/TodosBikonianosContext";
 import * as colors from "../../Styles/colors";
 
-function BikonianoDetails() {
-  const { todosBikonianos, posicionBikoniano } = useContext(
-    TodosBikonianosContext
-  );
-  const bikoniano = todosBikonianos[posicionBikoniano];
-  const anoIncorporacion: string = bikoniano["Fecha incorporación a Biko"]
+function BikonianoDetails(props: any) {
+  const bikoniano = props.bikoniano;
+  const entryYear: string = bikoniano["Fecha incorporación a Biko"]
     ? bikoniano["Fecha incorporación a Biko"].toString().split("/")[2]
     : "No Year";
   return (
     <div className="container-fluid">
-      {/* <Link to="/" className="float-right">
-        <img src={logo} alt="Logo" width="120px" height="43.3px" />
-      </Link> */}
-
       <div className="row">
         <div className="col-lg-5 col-md-5 col-12 mb-5 pl-0">
           <img
@@ -31,7 +22,7 @@ function BikonianoDetails() {
           <h1>
             <b>{bikoniano.Apellidos}</b>
           </h1>
-          <p style={{ color: colors.rojoPrincipal }}>{bikoniano.Rol}</p>
+          <p style={{ color: colors.redPrimary }}>{bikoniano.Rol}</p>
           <p>
             <span className="mr-3">
               <img
@@ -52,7 +43,7 @@ function BikonianoDetails() {
                 height="20"
               />
             </span>
-            Desde <b>{anoIncorporacion}</b>
+            Desde <b>{entryYear}</b>
           </p>
           <p>
             <span className="badge rounded-pill mr-2 bolsaHabilidad">

@@ -1,17 +1,20 @@
-import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { TodosBikonianosContext } from "../Contextos/TodosBikonianosContext";
+import { Bikoniano } from "../Interfaces/Interfaces";
 
-function GridElement(props: any) {
-  const { setPosicionBikoniano } = useContext(TodosBikonianosContext);
-
+function GridElement(props: {
+  bikoniano: Bikoniano;
+  allBikonianos: Bikoniano[];
+}) {
   return (
     <div className="col-lg-3 col-md-6 mb-4">
       <Link
-        onClick={() => {
-          setPosicionBikoniano(props.index);
+        to={{
+          pathname: "/bikoniano",
+          state: {
+            bikoniano: props.bikoniano,
+            allBikonianos: props.allBikonianos,
+          },
         }}
-        to={"/bikoniano"}
       >
         <div className="contenedor">
           <img
