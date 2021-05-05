@@ -28,6 +28,8 @@ p {
 #divCentrado {
   margin-left: 146px;
   margin-right: 146px;
+  justify-content: center;
+  align-content: center;
 }
 
 #titulo {
@@ -44,7 +46,7 @@ p {
 }
 #inputFiltro {
   height: 60px;
-  width: 706px;
+  width: 108.2%;
   border-radius: 1px;
 }
 #btnBuscarFiltro {

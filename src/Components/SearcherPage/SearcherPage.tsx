@@ -7,7 +7,7 @@ function SearcherPage() {
   const [filterText, setFilterText] = useState("");
   return (
     <div id="divCentrado">
-      <div className="container p-0 mx-0 ">
+      <div className="container p-0 mx-0 mx-auto">
         <Header></Header>
         <Searcher text={filterText} setText={setFilterText}></Searcher>
         <GridBikonianos textFilter={filterText}></GridBikonianos>
