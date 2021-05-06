@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Link } from "react-router-dom";
 import { Bikoniano } from "../Interfaces/Interfaces";
 
@@ -41,4 +42,4 @@ function GridElement(props: {
   );
 }
 
-export default GridElement;
+export default memo(GridElement);
