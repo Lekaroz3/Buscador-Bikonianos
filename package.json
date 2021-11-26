@@ -36,12 +36,12 @@
     ]
   },
   "lint-staged": {
-    "src/**/*.{js,jsx}": [
+    "src/**/*.{js,jsx,tsx}": [
       "eslint . --fix", "git add"
     ],
     "src/**/*.scss": [
       "stylelint --syntax scss --fix", "git add"
-    ],
+    ]
   },
   "husky": {
     "hooks": {
