@@ -37,10 +37,10 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,tsx}": [
-      "eslint . --fix", "git add"
+      "prettier --write ."
     ],
     "src/**/*.scss": [
-      "stylelint --syntax scss --fix", "git add"
+      "prettier --write ."
     ]
   },
   "husky": {
