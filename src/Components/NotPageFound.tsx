@@ -3,7 +3,7 @@ function NotPageFound() {
     <div className="container mt-5">
       <div className="">
         <div className="col align-self-center">
-          <h1 className="">Not Page Found!</h1>
+          <h1 className="">Not Page Found Ouu!</h1>
         </div>
       </div>
     </div>
