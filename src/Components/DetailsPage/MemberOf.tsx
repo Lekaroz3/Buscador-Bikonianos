@@ -28,7 +28,7 @@ function MemberOf(props: {
       );
       setTitle("Otros de " + bikoniano.Rol);
     }
-  }, [bikoniano]);
+  }, [bikoniano, props.allBikonianos, props.typeToFind]);
 
   if (!miembros) {
     return (
@@ -46,9 +46,8 @@ function MemberOf(props: {
       </h3>
       <div className="row">
         {miembros.map((bikon, index) => {
-          if (bikon === bikoniano) return;
-          if (index >= 4) return;
-          const ind = props.allBikonianos.indexOf(bikon);
+          if (bikon === bikoniano) return null;
+          if (index >= 4) return null;
           return (
             <GridElement
               bikoniano={bikon}
