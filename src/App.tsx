@@ -12,11 +12,7 @@ function App() {
         <Menu></Menu>
         <header className="App-header">
           <Switch>
-            <Route
-              exact
-              path="/"
-              component={() => <SearcherPage></SearcherPage>}
-            ></Route>
+            <Route exact path="/" component={SearcherPage}></Route>
             <Switch>
               <Route exact path="/bikoniano" component={DetailsPage}></Route>
               <Route path="/404" component={NotPageFound}></Route>
