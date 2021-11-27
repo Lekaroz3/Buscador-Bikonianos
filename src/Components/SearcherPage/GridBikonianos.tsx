@@ -1,5 +1,5 @@
 import data from "../../Data/data.json";
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Bikoniano } from "../../Interfaces/Interfaces";
 import GridElement from "../GridElement";
 
